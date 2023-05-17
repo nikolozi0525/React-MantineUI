@@ -43,7 +43,6 @@ const useStyles = createStyles((theme) => ({
     marginLeft: "auto",
     color: "#FFBA45",
     textDecoration: "underline",
-    fontSize: rem(12),
   },
   signup: {
     color: "#FFBA45",
@@ -64,16 +63,20 @@ const useStyles = createStyles((theme) => ({
     fontFamily: "Inter",
   },
   login_btn: {
-    "@media (max-width :80em)": {
+    "@media (max-width :48em)": {
       width: "100%",
     },
-    width: "50%",
+    width: rem(296),
+    height: rem(50),
+    fontSize: rem(22),
   },
   login_btn_google: {
-    "@media (max-width :80em)": {
+    "@media (max-width :48em)": {
       width: "100%",
     },
-    width: "50%",
+    width: rem(296),
+    height: rem(50),
+    fontSize: rem(22),
     marginTop: rem(20),
     color: "grey",
   },

@@ -9,7 +9,7 @@ import {
   TextInput,
 } from "@mantine/core";
 
-import { IconBrandGoogle } from "@tabler/icons-react";
+import { Link } from "react-router-dom";
 import { useForm } from "@mantine/form";
 import useStyles from "./style";
 
@@ -58,7 +58,9 @@ const Login = () => {
         <div className={classes.toptitle}>
           <Text>
             Don't have an account?
-            <Anchor className={classes.signup}>Sign up</Anchor>
+            <Link className={classes.signup} to={"/signup"}>
+              Sign up
+            </Link>
           </Text>
         </div>
         <div className={classes.myform}>
@@ -69,11 +71,13 @@ const Login = () => {
               width={100}
               placeholder="EG.abc@gmail.com"
               {...form.getInputProps("email")}
+              size={"lg"}
             />
             <PasswordInput
               label="Password"
               placeholder="Eg.A*****"
               {...form.getInputProps("Password")}
+              size={"lg"}
             />
             <div className={classes.rememberbox}>
               <Group>
