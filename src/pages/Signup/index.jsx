@@ -9,7 +9,6 @@ import {
   TextInput,
 } from "@mantine/core";
 
-import { IconBrandGoogle } from "@tabler/icons-react";
 import axios from "axios";
 import { useForm } from "@mantine/form";
 import useStyles from "./style";
@@ -111,7 +110,8 @@ const Signup = () => {
             <div>
               <Button
                 variant="subtle"
-                leftIcon={<IconBrandGoogle />}
+                // eslint-disable-next-line jsx-a11y/alt-text
+                leftIcon={<img src="assets/images/google.png" />}
                 className={classes.login_btn_google}
               >
                 Login with the Google

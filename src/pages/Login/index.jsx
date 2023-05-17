@@ -87,7 +87,8 @@ const Login = () => {
             <div>
               <Button
                 variant="subtle"
-                leftIcon={<IconBrandGoogle />}
+                // eslint-disable-next-line jsx-a11y/alt-text
+                leftIcon={<img src="assets/images/google.png" />}
                 className={classes.login_btn_google}
               >
                 Login with the Google
