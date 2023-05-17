@@ -17,7 +17,7 @@ const useStyles = createStyles((theme) => ({
     aspectRatio: 2.7,
   },
   glass_man: {
-    marginTop: "9.4%",
+    marginTop: rem(286),
     marginLeft: "8.95%",
     width: "59.2%",
     aspectRatio: 1.298,
@@ -67,13 +67,17 @@ const useStyles = createStyles((theme) => ({
     "@media (max-width :80em)": {
       width: "100%",
     },
-    width: "50%",
+    width: rem(296),
+    height: rem(50),
+    fontSize: rem(22),
   },
   login_btn_google: {
     "@media (max-width :80em)": {
       width: "100%",
     },
-    width: "50%",
+    width: rem(296),
+    height: rem(50),
+    fontSize: rem(22),
     marginTop: rem(20),
     color: "grey",
   },
