@@ -9,6 +9,7 @@ import {
   TextInput,
 } from "@mantine/core";
 
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "@mantine/form";
 import useStyles from "./style";
@@ -26,7 +27,9 @@ const Signup = () => {
   });
   const signup = () => {
     alert(form.values.name);
-    // axios.post('localhost:3000')
+    axios.post("localhost:3000/signup", form.values).then((data) => {
+      alert("");
+    });
   };
   return (
     <Grid>
@@ -37,10 +40,10 @@ const Signup = () => {
             src="assets/images/logo.png"
             alt=""
           />
-          <Text fs={"italic"} fw={700} sx={{ fontFamily: "Inter" }} fz={38}>
+          <Text fs={"italic"} fw={700} fz={38}>
             Welcome Back
           </Text>
-          <Text c="white">
+          <Text c="white" fz={18}>
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit. Exercitation
             veniam consequat sunt nostrud amet.
@@ -64,7 +67,9 @@ const Signup = () => {
         <div className={classes.toptitle}>
           <Text>
             Already have an account?
-            <Anchor className={classes.signup}>Login</Anchor>
+            <Link className={classes.signup} to={"/login"}>
+              Login
+            </Link>
           </Text>
         </div>
         <div className={classes.myform}>
@@ -72,31 +77,32 @@ const Signup = () => {
           <form onSubmit={form.onSubmit((values) => console.log)}>
             <TextInput
               label="Name"
-              width={100}
               placeholder="EG.abc"
               {...form.getInputProps("name")}
+              size={"lg"}
             />
             <TextInput
               label="Email"
-              width={100}
               placeholder="EG.abc@gmail.com"
               {...form.getInputProps("email")}
+              size={"lg"}
             />
             <PasswordInput
               label="Password"
               placeholder="Eg.A*****"
               {...form.getInputProps("password")}
+              size={"lg"}
             />
             <PasswordInput
               label="Re-enter Password"
               placeholder="Eg.A*****"
               {...form.getInputProps("repassword")}
+              size={"lg"}
             />
             <div className={classes.rememberbox}>
               <Group>
                 <Checkbox
                   label={"I agree with the Terms of Service and Privacy policy"}
-                  className={classes.rememberme}
                 />
               </Group>
             </div>
