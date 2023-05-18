@@ -10,11 +10,12 @@ import {
   Text,
   TextInput,
 } from "@mantine/core";
-import { useRef, useState } from "react";
 
+import { DateInput } from "@mantine/dates";
 import { IconChevronLeft } from "@tabler/icons-react";
 import RadioCard from "../../components/RadioCard";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { useStyles } from "./style";
 
 const PaymentInfo = () => {
@@ -104,7 +105,7 @@ const PaymentInfo = () => {
             className={classes.myfont}
           />
           <SimpleGrid cols={2} className={classes.m10}>
-            <TextInput
+            <DateInput
               label="Expiry Date"
               size="lg"
               placeholder="Eg.08/23"
