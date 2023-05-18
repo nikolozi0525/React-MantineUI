@@ -62,4 +62,12 @@ export const useStyles = createStyles((theme) => ({
     fontFamily: "Inter",
     color: "#979797",
   },
+  back: {
+    position: "absolute",
+    top: rem(50),
+    left: rem(50),
+    fontSize: rem(16),
+    fontFamily: "Inter",
+    fontWeight: 500,
+  },
 }));

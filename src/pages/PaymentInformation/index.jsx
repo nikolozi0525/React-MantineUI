@@ -1,4 +1,5 @@
 import {
+  ActionIcon,
   Button,
   Card,
   Center,
@@ -11,14 +12,33 @@ import {
 } from "@mantine/core";
 import { useRef, useState } from "react";
 
+import { IconChevronLeft } from "@tabler/icons-react";
 import RadioCard from "../../components/RadioCard";
+import { useNavigate } from "react-router-dom";
 import { useStyles } from "./style";
 
 const PaymentInfo = () => {
   const { classes } = useStyles();
   const [value, setValue] = useState("automatic");
+  const navigate = useNavigate();
+  const onPay = () => {};
+  const onBack = () => {
+    navigate(-1);
+  };
+
   return (
     <>
+      <Group className={classes.back}>
+        <ActionIcon
+          variant="outline"
+          size={"xl"}
+          radius={"xl"}
+          onClick={onBack}
+        >
+          <IconChevronLeft />
+        </ActionIcon>
+        <Text>Back</Text>
+      </Group>
       <Container className={classes.centered} size={"sm"}>
         <div className={classes.logo}>
           <img src="assets/images/logo2.png" alt="" />
@@ -28,9 +48,9 @@ const PaymentInfo = () => {
       <Container size={"md"}>
         <Radio.Group
           value={value}
-          onChange={() => {
-            setValue();
-            console.log(value);
+          onChange={(v) => {
+            setValue(v);
+            // console.log(value);
           }}
           size="md"
           name="paytype"
@@ -52,8 +72,6 @@ const PaymentInfo = () => {
                 </>
               }
             />
-            {/* <RadioCard />
-            <RadioCard /> */}
             <Radio
               className={value === "manual" ? classes.selected : classes.type}
               size="md"
@@ -101,7 +119,12 @@ const PaymentInfo = () => {
           </SimpleGrid>
         </Card>
         <Center>
-          <Button color="yellow" size="md" className={classes.payBtn}>
+          <Button
+            color="yellow"
+            size="lg"
+            className={classes.payBtn}
+            onClick={onPay}
+          >
             Pay now
           </Button>
         </Center>
