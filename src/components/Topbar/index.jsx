@@ -3,11 +3,12 @@ import { IconBell, IconSearch, IconSettings } from "@tabler/icons-react";
 
 import useStyles from "./style";
 
-const Topbar = () => {
+const Topbar = (props) => {
   const { classes } = useStyles();
+  const { title } = props;
   return (
     <Container className={classes.wrapper} fluid p={0}>
-      <Text className={classes.myfont}>Dashboard</Text>
+      <Text className={classes.myfont}>{title}</Text>
       <ActionIcon
         variant="light"
         size={52}

@@ -15,7 +15,7 @@ const Dashboard = () => {
       <Container className={classes.wrapper} fluid p={0}>
         <Nav />
         <Container fluid className={classes.content} px={40}>
-          <Topbar />
+          <Topbar title={"Dashboard"} />
           <SimpleGrid cols={5} spacing={51} mt={54} mx={10}>
             <DashCard
               stock={"03"}
