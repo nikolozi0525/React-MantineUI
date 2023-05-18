@@ -1,16 +1,18 @@
 import {
-  Anchor,
+  Group,
   Button,
   Checkbox,
   Grid,
   Select,
   Text,
   TextInput,
+  ActionIcon,
 } from "@mantine/core";
 
 import { Link } from "react-router-dom";
 import { useForm } from "@mantine/form";
 import useStyles from "./style";
+import { IconArrowRight } from "@tabler/icons-react";
 
 const BusinessProfile = () => {
   const { classes } = useStyles();
@@ -22,7 +24,7 @@ const BusinessProfile = () => {
     },
   });
   return (
-    <Grid>
+    <Grid className={classes.myfont}>
       <Grid.Col span={6} className={classes.left_pane}>
         <div className={classes.welcome}>
           <img
@@ -33,7 +35,7 @@ const BusinessProfile = () => {
           <Text fs={"italic"} fw={700} sx={{ fontFamily: "Inter" }} fz={38}>
             Fill-up Your Business Profile
           </Text>
-          <Text c="white" fz={18}>
+          <Text c="white" fz={18} sx={{ fontFamily: "Inter" }}>
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit. Exercitation
             veniam consequat sunt nostrud amet.
@@ -55,9 +57,19 @@ const BusinessProfile = () => {
       </Grid.Col>
       <Grid.Col span={6}>
         <div className={classes.toptitle}>
-          <Text>
-            <Anchor className={classes.signup}>Next</Anchor>
-          </Text>
+          <Link className={classes.signup} to={"/selectprice"}>
+            <Group>
+              Next
+              <ActionIcon
+                variant="light"
+                size={"lg"}
+                radius="xl"
+                color="yellow"
+              >
+                <IconArrowRight />{" "}
+              </ActionIcon>
+            </Group>
+          </Link>
         </div>
         <div className={classes.myform}>
           <Text className={classes.title}>Business Profile</Text>
@@ -69,10 +81,12 @@ const BusinessProfile = () => {
                 placeholder="Eg.abc"
                 {...form.getInputProps("company_name")}
                 size={"lg"}
+                className={classes.myfont}
               />
             </div>
             <div className={classes.inputs}>
               <TextInput
+                className={classes.myfont}
                 label="Email"
                 width={100}
                 placeholder="Eg.abc@gmail.com"
@@ -82,6 +96,7 @@ const BusinessProfile = () => {
             </div>
             <div className={classes.inputs}>
               <TextInput
+                className={classes.myfont}
                 label="Phone Number"
                 width={100}
                 placeholder="EG.9876543215"
@@ -89,20 +104,13 @@ const BusinessProfile = () => {
                 size={"lg"}
               />
             </div>
-            <div className={classes.inputs}>
-              <TextInput
-                label="Email"
-                width={100}
-                placeholder="EG.abc@gmail.com"
-                {...form.getInputProps("email")}
-                size={"lg"}
-              />
-            </div>
+
             <div className={classes.inputs}>
               <Select
                 label="Industry"
                 placeholder="Select Industry"
                 size="lg"
+                className={classes.myfont}
                 data={[
                   { value: "react", label: "React" },
                   { value: "ng", label: "Angular" },
@@ -115,11 +123,11 @@ const BusinessProfile = () => {
               <Checkbox
                 size={"md"}
                 label={
-                  <>
+                  <div className={classes.myfont}>
                     I agree with{" "}
                     <Link className={classes.forgot}>Terms of Service</Link> and{" "}
                     <Link className={classes.forgot}>Privacy Policy</Link>
-                  </>
+                  </div>
                 }
                 className={classes.rememberme}
               />
@@ -127,6 +135,19 @@ const BusinessProfile = () => {
             <Button color="yellow" className={classes.login_btn}>
               Continue
             </Button>
+            <Link to={""}>
+              <Text
+                sx={{
+                  fontFamily: "Inter",
+                  fontSize: 20,
+                  color: "#FFBA45",
+                  textDecoration: "underline",
+                  marginTop: 24,
+                }}
+              >
+                Learn More
+              </Text>{" "}
+            </Link>
           </form>
         </div>
       </Grid.Col>

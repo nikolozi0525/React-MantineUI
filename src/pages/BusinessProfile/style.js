@@ -45,15 +45,21 @@ const useStyles = createStyles((theme) => ({
     textDecoration: "underline",
   },
   signup: {
+    position: "absoulte",
+    top: rem(60),
+    right: rem(60),
     color: "#FFBA45",
     textDecoration: "underline",
+    fontFamily: "Inter",
+    fontSize: rem(20),
   },
   toptitle: {
-    position: "relative",
+    position: "absolute",
     top: "5.5%",
-    right: "5.5%",
+    right: rem(60),
     fontSize: rem(14),
     textAlign: "right",
+    fontFamily: "Inter",
   },
   title: {
     marginTop: rem(12),
@@ -82,6 +88,9 @@ const useStyles = createStyles((theme) => ({
   inputs: {
     marginTop: rem(10),
     marginBottom: rem(10),
+  },
+  myfont: {
+    fontFamily: "Inter",
   },
 }));
 
