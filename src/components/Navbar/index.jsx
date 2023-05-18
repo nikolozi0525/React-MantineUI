@@ -37,7 +37,7 @@ export default function Nav() {
   ));
 
   return (
-    <Navbar height={700} width={{ sm: 382 }} p={40}>
+    <Navbar height={1080} width={{ sm: 382 }} p={40}>
       <Navbar.Section grow>
         <Center className={classes.header}>
           <img src="assets/images/logo3.png" alt="Logo" />
