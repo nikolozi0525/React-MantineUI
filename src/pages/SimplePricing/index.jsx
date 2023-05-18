@@ -1,12 +1,42 @@
-import { Container, Grid, SimpleGrid, Text } from "@mantine/core";
+import {
+  ActionIcon,
+  Container,
+  Grid,
+  Group,
+  SimpleGrid,
+  Text,
+} from "@mantine/core";
+import { useNavigate, useNavigationType } from "react-router-dom";
 
+import { IconChevronLeft } from "@tabler/icons-react";
 import PriceCard from "../../components/PriceCard";
 import useStyles from "./style";
 
 const SimplePricing = () => {
   const { classes } = useStyles();
+  const navigate = useNavigate();
+  const onStart = () => {
+    navigate("/payInfo");
+  };
+  const onTrial = () => {
+    navigate("/dashboard");
+  };
+  const onBack = () => {
+    navigate(-1);
+  };
   return (
     <>
+      <Group className={classes.back}>
+        <ActionIcon
+          variant="outline"
+          size={"xl"}
+          radius={"xl"}
+          onClick={onBack}
+        >
+          <IconChevronLeft />
+        </ActionIcon>
+        <Text>Back</Text>
+      </Group>
       <Container className={classes.centered}>
         <div className={classes.logo}>
           <img src="assets/images/logo2.png" alt="" />
@@ -30,12 +60,14 @@ const SimplePricing = () => {
             daily={"Unlimited"}
             theme="black"
             src="assets/images/personal.png"
+            onClick={onStart}
           />
           <PriceCard
             staff={"Unlimited"}
             patient={"Unlimited"}
             daily={"Unlimited"}
             src="assets/images/agency.png"
+            onClick={onStart}
           />
         </SimpleGrid>
       </div>

@@ -26,6 +26,14 @@ const useStyles = createStyles((theme) => ({
     marginTop: rem(80),
     marginBottom: rem(111),
   },
+  back: {
+    position: "absolute",
+    top: rem(50),
+    left: rem(50),
+    fontSize: rem(16),
+    fontFamily: "Inter",
+    fontWeight: 500,
+  },
 }));
 
 export default useStyles;
