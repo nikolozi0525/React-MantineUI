@@ -12,7 +12,7 @@ import {
 } from "@mantine/core";
 
 const PriceCard = (props) => {
-  const { src, staff, patient, daily } = props;
+  const { src, staff, patient, daily, onClick } = props;
   const useStyles = createStyles((theme) => ({
     container: {
       width: "100%",
@@ -89,7 +89,12 @@ const PriceCard = (props) => {
         </div>
         <Card.Section>
           <Center>
-            <Button color={"yellow"} className={classes.startBtn} size="md">
+            <Button
+              color={"yellow"}
+              className={classes.startBtn}
+              size="md"
+              onClick={onClick}
+            >
               Get started
             </Button>
           </Center>
