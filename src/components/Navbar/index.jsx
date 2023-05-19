@@ -1,6 +1,7 @@
 import { Center, Code, Navbar } from "@mantine/core";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
+import { LinksGroup } from "../NavbarLinksGroup";
 import { useState } from "react";
 import useStyles from "./style";
 
@@ -8,7 +9,17 @@ import useStyles from "./style";
 
 const data = [
   { to: "/dashboard", label: "Dashboard", imgsrc: "assets/images/home.png" },
-  { to: "/facility", label: "Facility", imgsrc: "assets/images/facility.png" },
+  {
+    to: "/facility",
+    label: "Facility",
+    imgsrc: "assets/images/facility.png",
+    links: [
+      {
+        label: "Facility Type",
+        to: "/facilitytype",
+      },
+    ],
+  },
   { to: "/staff", label: "Staff", imgsrc: "assets/images/people.png" },
   { to: "/patient", label: "Patient", imgsrc: "assets/images/patient.png" },
   { to: "/note", label: "Note", imgsrc: "assets/images/note.png" },
@@ -17,28 +28,8 @@ const data = [
 
 export default function Nav() {
   const { classes, cx } = useStyles();
-  const [active, setActive] = useState("Dashboard");
   const navigate = useNavigate();
-  const links = data.map((item) => (
-    <NavLink
-      // className={cx(classes.link, {
-      //   [classes.linkActive]: item.label === active,
-      // })}
-      className={({ isActive, isPending }) =>
-        isActive ? cx(classes.link, classes.linkActive) : classes.link
-      }
-      to={item.to}
-      key={item.label}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(item.label);
-        navigate(item.to);
-      }}
-    >
-      <img src={item.imgsrc} className={classes.linkIcon} alt="icon" />
-      <span>{item.label}</span>
-    </NavLink>
-  ));
+  const links = data.map((item) => <LinksGroup {...item} />);
 
   return (
     <Navbar height={1080} width={{ sm: 382 }} p={40}>

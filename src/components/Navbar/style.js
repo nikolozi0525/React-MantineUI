@@ -57,7 +57,6 @@ const useStyles = createStyles((theme) => ({
       color: "white",
       [`& .${getStylesRef("icon")}`]: {
         color: "white",
-        // background: "white",
       },
     },
   },
