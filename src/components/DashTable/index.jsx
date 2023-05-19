@@ -1,5 +1,6 @@
 import {
   ActionIcon,
+  Button,
   ScrollArea,
   Table,
   createStyles,
@@ -13,6 +14,7 @@ const useStyles = createStyles((theme) => ({
   header: {
     position: "sticky",
     top: 0,
+    zIndex: 1,
     backgroundColor:
       theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
     transition: "box-shadow 150ms ease",
@@ -36,69 +38,10 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const data = [
-  {
-    patient: "Adam Newman",
-    note: "Progress Note",
-    facility: "J Group Home",
-    date: "12/04/2023",
-    staff: "Wife Newman",
-  },
-  {
-    patient: "Adam Newman",
-    note: "Progress Note",
-    facility: "J Group Home",
-    date: "12/04/2023",
-    staff: "Wife Newman",
-  },
-  {
-    patient: "Adam Newman",
-    note: "Progress Note",
-    facility: "J Group Home",
-    date: "12/04/2023",
-    staff: "Wife Newman",
-  },
-  {
-    patient: "Adam Newman",
-    note: "Progress Note",
-    facility: "J Group Home",
-    date: "12/04/2023",
-    staff: "Wife Newman",
-  },
-  {
-    patient: "Adam Newman",
-    note: "Progress Note",
-    facility: "J Group Home",
-    date: "12/04/2023",
-    staff: "Wife Newman",
-  },
-  {
-    patient: "Adam Newman",
-    note: "Progress Note",
-    facility: "J Group Home",
-    date: "12/04/2023",
-    staff: "Wife Newman",
-  },
-  {
-    patient: "Adam Newman",
-    note: "Progress Note",
-    facility: "J Group Home",
-    date: "12/04/2023",
-    staff: "Wife Newman",
-  },
-  {
-    patient: "Adam Newman",
-    note: "Progress Note",
-    facility: "J Group Home",
-    date: "12/04/2023",
-    staff: "Wife Newman",
-  },
-];
-
 export function DashTable() {
   const data = [
     {
-      patient: "Adam Newman",
+      patient: "Adam Newman1",
       note: "Progress Note",
       facility: "J Group Home",
       date: "12/04/2023",
