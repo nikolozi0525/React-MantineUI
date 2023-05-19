@@ -10,6 +10,8 @@ import {
 } from "@mantine/core";
 import { IconEdit, IconTrash } from "@tabler/icons-react";
 
+import FacilityModal from "../FacilityModal";
+import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
 
 const useStyles = createStyles((theme) => ({
@@ -29,13 +31,21 @@ const useStyles = createStyles((theme) => ({
   },
   cell: {
     paddingLeft: rem(50),
+    fontFamily: "Inter",
   },
 }));
 const FacilityTableRow = ({ row }) => {
   const { classes } = useStyles();
   const [active, setActive] = useState(row.active);
+  const [opened, { open, close }] = useDisclosure(false);
   return (
     <SimpleGrid cols={5} className={classes.wrapper}>
+      <FacilityModal
+        opened={opened}
+        close={close}
+        title={"Edit Facility"}
+        data={row}
+      />
       <Text className={classes.cell}>{row.name}</Text>
       <Text className={classes.cell}>{row.type}</Text>
       <Text className={classes.cell}>{row.location}</Text>
@@ -51,7 +61,7 @@ const FacilityTableRow = ({ row }) => {
       </Text>
       <Text sx={{ margin: "auto" }}>
         <Group>
-          <ActionIcon color="green" variant="light">
+          <ActionIcon color="green" variant="light" onClick={open}>
             <IconEdit />
           </ActionIcon>
           <ActionIcon color="red" variant="light">
