@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import BusinessProfile from "./pages/BusinessProfile";
 import Dashboard from "./pages/Dashboard";
+import Facility from "./pages/Facility";
 import LandingPage from "./layouts/landing";
 import Login from "./pages/Login";
 import PaymentInfo from "./pages/PaymentInformation";
@@ -21,6 +22,8 @@ function App() {
           <Route path="/profile" element={<BusinessProfile />} />
           <Route path="/selectprice" element={<SimplePricing />} />
           <Route path="/payInfo" element={<PaymentInfo />} />
+
+          <Route path="/facility" element={<Facility />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
