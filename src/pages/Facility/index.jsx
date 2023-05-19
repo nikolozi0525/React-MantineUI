@@ -1,6 +1,6 @@
 import { Container, createStyles } from "@mantine/core";
 
-import AddButton from "../../components/FacilityButton";
+import AddButton from "../../components/AddButton";
 import FacilityTable from "../../components/FacilityTable";
 import Nav from "../../components/Navbar";
 import Topbar from "../../components/Topbar";
