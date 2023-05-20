@@ -11,9 +11,9 @@ import {
 } from "@mantine/core";
 
 import AddButton from "../../components/AddButton";
-import FacilityModal from "../../components/FacilityModal";
-import FacilityTable from "../../components/FacilityTable";
 import Nav from "../../components/Navbar";
+import PatientModal from "../../components/PatientModal";
+import PatientTable from "../../components/PatientTable";
 import Topbar from "../../components/Topbar";
 import { useDisclosure } from "@mantine/hooks";
 
@@ -45,16 +45,16 @@ const Patient = (props) => {
       <Container className={classes.wrapper} fluid p={0}>
         <Nav />
         <Container fluid className={classes.content} px={40}>
-          <FacilityModal
+          <PatientModal
             opened={opened}
             close={close}
-            title={"Add New Facility"}
+            title={"Add New Patient"}
           />
           <Topbar title={"Patient Management"} />
           <div className={classes.btn}>
             <AddButton title={"Add New Employee"} onClick={open} />
           </div>
-          <FacilityTable />
+          <PatientTable />
         </Container>
       </Container>
     </>
