@@ -10,7 +10,7 @@ import {
 } from "@mantine/core";
 import { IconEdit, IconTrash } from "@tabler/icons-react";
 
-import FacilityModal from "../FacilityModal";
+import PatientModal from "../PatientModal";
 import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
 
@@ -39,8 +39,8 @@ const PatientTableRow = ({ row }) => {
   const [active, setActive] = useState(row.active);
   const [opened, { open, close }] = useDisclosure(false);
   return (
-    <SimpleGrid cols={5} className={classes.wrapper}>
-      <FacilityModal
+    <SimpleGrid cols={8} className={classes.wrapper}>
+      <PatientModal
         opened={opened}
         close={close}
         title={"Edit Facility"}
@@ -48,6 +48,9 @@ const PatientTableRow = ({ row }) => {
       />
       <Text className={classes.cell}>{row.name}</Text>
       <Text className={classes.cell}>{row.type}</Text>
+      <Text className={classes.cell}>{row.location}</Text>
+      <Text className={classes.cell}>{row.location}</Text>
+      <Text className={classes.cell}>{row.location}</Text>
       <Text className={classes.cell}>{row.location}</Text>
       <Text sx={{ margin: "auto" }}>
         <Switch
