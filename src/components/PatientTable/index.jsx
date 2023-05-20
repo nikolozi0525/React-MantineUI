@@ -58,7 +58,8 @@ const useStyles = createStyles((theme) => ({
     marginTop: rem(30),
   },
   cell: {
-    paddingLeft: 50,
+    paddingLeft: 20,
+    textAlign: "center",
   },
 }));
 
@@ -67,10 +68,13 @@ const PatientTable = ({ data }) => {
   const rows = temp.map((row) => <PatientTableRow row={row} />);
   return (
     <ScrollArea>
-      <SimpleGrid cols={5} className={classes.header}>
-        <Text className={classes.cell}>Facility Name</Text>
+      <SimpleGrid cols={8} className={classes.header}>
+        <Text className={classes.cell}>Name</Text>
         <Text className={classes.cell}>Facility Type</Text>
-        <Text className={classes.cell}>Location</Text>
+        <Text className={classes.cell}>Facility Name</Text>
+        <Text className={classes.cell}>D.O.B</Text>
+        <Text className={classes.cell}>Guardian Name</Text>
+        <Text className={classes.cell}>Guardian phone</Text>
         <Text sx={{ margin: "auto" }}>Active</Text>
         <Text className={classes.cell}></Text>
       </SimpleGrid>
