@@ -51,7 +51,7 @@ const FacilityModal = ({ opened, close, title, ...data }) => {
       zIndex={1000}
       title={
         <Group>
-          <img src="assets/images/addfac.png" alt="" />
+          <img src="/assets/images/addfac.png" alt="" />
           <Text sx={{ fontFamily: "Inter", fontSize: 22, fontWeight: 600 }}>
             {title}
           </Text>
@@ -63,7 +63,7 @@ const FacilityModal = ({ opened, close, title, ...data }) => {
         className={classes.typeInput}
         label="Facility Type Name"
         size="lg"
-        icon={<img src="assets/images/building.png" alt="home" />}
+        icon={<img src="/assets/images/building.png" alt="home" />}
         placeholder="Enter Facility type name"
       />
       <SimpleGrid

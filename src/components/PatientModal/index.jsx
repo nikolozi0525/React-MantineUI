@@ -51,10 +51,11 @@ const PatientModal = ({ opened, close, title, ...data }) => {
       onClose={close}
       shadow="md"
       radius={15}
+      overlayProps={{ blur: 3 }}
       zIndex={1000}
       title={
         <Group>
-          <img src="assets/images/addfac.png" alt="" />
+          <img src="/assets/images/addfac.png" alt="" />
           <Text sx={{ fontFamily: "Inter", fontSize: 22, fontWeight: 600 }}>
             {title}
           </Text>
@@ -72,14 +73,14 @@ const PatientModal = ({ opened, close, title, ...data }) => {
         className={classes.myfont}
         label="Full Name*"
         size="lg"
-        icon={<img src="assets/images/home2.png" alt="home" />}
+        icon={<img src="/assets/images/home2.png" alt="home" />}
         placeholder="Ex: Valerie Liberty"
       />
       <DateInput
         className={classes.myfont}
         label="Date of birth*"
         size="lg"
-        icon={<img src="assets/images/home2.png" alt="home" />}
+        icon={<img src="/assets/images/home2.png" alt="home" />}
         placeholder="Ex: 04/02/1993"
       />
       <SimpleGrid cols={2} className={classes.mwd}>
@@ -88,7 +89,7 @@ const PatientModal = ({ opened, close, title, ...data }) => {
           label="Facility Type*"
           size="lg"
           data={["dfsd", "sdfsf", "dfdsf"]}
-          icon={<img src="assets/images/building.png" alt="home" />}
+          icon={<img src="/assets/images/building.png" alt="home" />}
           placeholder="Select Facility Type"
         />
         <Select
@@ -96,7 +97,7 @@ const PatientModal = ({ opened, close, title, ...data }) => {
           label="Facility Name*"
           size="lg"
           data={["dfsd", "sdfsf", "dfdsf"]}
-          icon={<img src="assets/images/building.png" alt="home" />}
+          icon={<img src="/assets/images/building.png" alt="home" />}
           placeholder="Select Facility Name"
         />
       </SimpleGrid>
@@ -105,7 +106,7 @@ const PatientModal = ({ opened, close, title, ...data }) => {
           className={classes.myfont}
           label="Guardian Name*"
           size="lg"
-          icon={<img src="assets/images/location.png" alt="address" />}
+          icon={<img src="/assets/images/location.png" alt="address" />}
           placeholder="Ex: Wife Newman"
           sx={{ marginTop: 20 }}
         />
@@ -113,7 +114,7 @@ const PatientModal = ({ opened, close, title, ...data }) => {
           className={classes.myfont}
           label="Guardian Phone*"
           size="lg"
-          icon={<img src="assets/images/location.png" alt="address" />}
+          icon={<img src="/assets/images/location.png" alt="address" />}
           sx={{ marginTop: 20 }}
           placeholder="+1-245-786-2436"
         />

@@ -1,18 +1,18 @@
 import {
-  Group,
+  ActionIcon,
   Button,
   Checkbox,
   Grid,
+  Group,
   Select,
   Text,
   TextInput,
-  ActionIcon,
 } from "@mantine/core";
 
+import { IconArrowRight } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import { useForm } from "@mantine/form";
 import useStyles from "./style";
-import { IconArrowRight } from "@tabler/icons-react";
 
 const BusinessProfile = () => {
   const { classes } = useStyles();
@@ -29,7 +29,7 @@ const BusinessProfile = () => {
         <div className={classes.welcome}>
           <img
             className={classes.logo_img}
-            src="assets/images/logo.png"
+            src="/assets/images/logo.png"
             alt=""
           />
           <Text fs={"italic"} fw={700} sx={{ fontFamily: "Inter" }} fz={38}>
@@ -45,13 +45,13 @@ const BusinessProfile = () => {
         <div>
           <img
             className={classes.glass_man}
-            src="assets/images/businessman.png"
+            src="/assets/images/businessman.png"
             alt=""
           />
         </div>
         <img
           className={classes.credential}
-          src="assets/images/credential.png"
+          src="/assets/images/credential.png"
           alt=""
         />
       </Grid.Col>

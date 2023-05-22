@@ -39,7 +39,7 @@ const SimplePricing = () => {
       </Group>
       <Container className={classes.centered}>
         <div className={classes.logo}>
-          <img src="assets/images/logo2.png" alt="" />
+          <img src="/assets/images/logo2.png" alt="" />
         </div>
         <Text className={classes.title}>Simple Pricing</Text>
         <Text className={classes.description}>
@@ -52,21 +52,21 @@ const SimplePricing = () => {
             staff={0}
             patient={2}
             daily={5}
-            src="assets/images/trial.png"
+            src="/assets/images/trial.png"
           />
           <PriceCard
             staff={4}
             patient={5}
             daily={"Unlimited"}
             theme="black"
-            src="assets/images/personal.png"
+            src="/assets/images/personal.png"
             onClick={onStart}
           />
           <PriceCard
             staff={"Unlimited"}
             patient={"Unlimited"}
             daily={"Unlimited"}
-            src="assets/images/agency.png"
+            src="/assets/images/agency.png"
             onClick={onStart}
           />
         </SimpleGrid>

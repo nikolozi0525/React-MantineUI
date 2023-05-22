@@ -48,11 +48,12 @@ const StaffModal = ({ opened, onclose, title, save, ...data }) => {
       size={"lg"}
       onClose={onclose}
       shadow="md"
+      overlayProps={{ blur: 3 }}
       radius={"lg"}
       zIndex={1000}
       title={
         <Group>
-          <img src="assets/images/addfac.png" alt="" />
+          <img src="/assets/images/addfac.png" alt="" />
           <Text sx={{ fontFamily: "Inter", fontSize: 22, fontWeight: 600 }}>
             {title}
           </Text>
@@ -69,21 +70,21 @@ const StaffModal = ({ opened, onclose, title, save, ...data }) => {
           borderTopStyle: "solid",
         }}
         size="lg"
-        icon={<img src="assets/images/home2.png" alt="home" />}
+        icon={<img src="/assets/images/home2.png" alt="home" />}
         placeholder="Ex: Marco Botton"
       />
 
       <TextInput
         label="Position"
         size="lg"
-        icon={<img src="assets/images/location.png" alt="address" />}
+        icon={<img src="/assets/images/location.png" alt="address" />}
         placeholder="Ex: Head Chief"
         sx={{ marginTop: 20 }}
       />
       <TextInput
         label="Email"
         size="lg"
-        icon={<img src="assets/images/location.png" alt="address" />}
+        icon={<img src="/assets/images/location.png" alt="address" />}
         sx={{ marginTop: 20 }}
         placeholder="Ex: peldi@gmail.com"
       />

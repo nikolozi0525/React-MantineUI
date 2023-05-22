@@ -1,6 +1,7 @@
 import { ActionIcon, Container, Text, TextInput } from "@mantine/core";
 import { IconBell, IconSearch, IconSettings } from "@tabler/icons-react";
 
+import { NavLink } from "react-router-dom";
 import useStyles from "./style";
 
 const Topbar = (props) => {
@@ -9,14 +10,17 @@ const Topbar = (props) => {
   return (
     <Container className={classes.wrapper} fluid p={0}>
       <Text className={classes.myfont}>{title}</Text>
-      <ActionIcon
-        variant="light"
-        size={52}
-        className={classes.float_right}
-        mx={5}
-      >
-        <IconSettings size={40} color="#232323" stroke={1} />
-      </ActionIcon>
+      <NavLink to={"/settings"}>
+        <ActionIcon
+          variant="light"
+          color="dark"
+          size={52}
+          className={classes.float_right}
+          mx={5}
+        >
+          <IconSettings size={40} color="#232323" stroke={1} />
+        </ActionIcon>
+      </NavLink>
       <ActionIcon
         variant="light"
         size={52}

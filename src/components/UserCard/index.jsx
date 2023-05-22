@@ -23,7 +23,7 @@ const UserCard = (props) => {
   const { classes } = useStyles();
   return (
     <Card className={classes.mycard} radius={10} shadow="sm">
-      <img src="assets/images/avatar.png" alt="" />
+      <img src="/assets/images/avatar.png" alt="" />
       <Text className={classes.name}>Devon Lane</Text>
       <Text className={classes.pos} mt={8}>
         Founder & CEO

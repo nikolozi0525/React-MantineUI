@@ -33,7 +33,7 @@ const AlertModal = ({ icon, title, isopen, close }) => {
       padding={40}
     >
       <Center sx={{ marginBottom: 30 }}>
-        <img src="assets/images/mail.png" alt="mail" />
+        <img src="/assets/images/mail.png" alt="mail" />
       </Center>
       <Text className={classes.text}>"Email invitation has been </Text>
       <Text className={classes.text}>sent"</Text>

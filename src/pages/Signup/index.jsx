@@ -37,7 +37,7 @@ const Signup = () => {
         <div className={classes.welcome}>
           <img
             className={classes.logo_img}
-            src="assets/images/logo.png"
+            src="/assets/images/logo.png"
             alt=""
           />
           <Text fs={"italic"} fw={700} fz={38}>
@@ -53,13 +53,13 @@ const Signup = () => {
         <div>
           <img
             className={classes.glass_man}
-            src="assets/images/beanbag.png"
+            src="/assets/images/beanbag.png"
             alt=""
           />
         </div>
         <img
           className={classes.credential}
-          src="assets/images/credential.png"
+          src="/assets/images/credential.png"
           alt=""
         />
       </Grid.Col>
@@ -117,7 +117,7 @@ const Signup = () => {
               <Button
                 variant="subtle"
                 // eslint-disable-next-line jsx-a11y/alt-text
-                leftIcon={<img src="assets/images/google.png" />}
+                leftIcon={<img src="/assets/images/google.png" />}
                 className={classes.login_btn_google}
               >
                 Login with the Google

@@ -44,10 +44,11 @@ const FacilityModal = ({ opened, close, title, ...data }) => {
       size={"xl"}
       onClose={close}
       shadow="md"
+      overlayProps={{ blur: 3 }}
       zIndex={1000}
       title={
         <Group>
-          <img src="assets/images/addfac.png" alt="" />
+          <img src="/assets/images/addfac.png" alt="" />
           <Text sx={{ fontFamily: "Inter", fontSize: 22, fontWeight: 600 }}>
             {title}
           </Text>
@@ -68,28 +69,28 @@ const FacilityModal = ({ opened, close, title, ...data }) => {
         <TextInput
           label="Facility Name*"
           size="lg"
-          icon={<img src="assets/images/home2.png" alt="home" />}
+          icon={<img src="/assets/images/home2.png" alt="home" />}
           placeholder="Ex: Valerie Liberty"
         />
         <Select
           label="Facility Type*"
           size="lg"
           data={["dfsd", "sdfsf", "dfdsf"]}
-          icon={<img src="assets/images/building.png" alt="home" />}
+          icon={<img src="/assets/images/building.png" alt="home" />}
           placeholder="Select Facility Type"
         />
       </SimpleGrid>
       <TextInput
         label="Address"
         size="lg"
-        icon={<img src="assets/images/location.png" alt="address" />}
+        icon={<img src="/assets/images/location.png" alt="address" />}
         placeholder="Ex: Flate No/House No/Apt No"
         sx={{ marginTop: 20 }}
       />
       <TextInput
         label="Address Line 2"
         size="lg"
-        icon={<img src="assets/images/location.png" alt="address" />}
+        icon={<img src="/assets/images/location.png" alt="address" />}
         sx={{ marginTop: 20 }}
         placeholder="Place/Area etc."
       />
@@ -97,7 +98,7 @@ const FacilityModal = ({ opened, close, title, ...data }) => {
         <TextInput
           label="Zipcode"
           size="lg"
-          icon={<img src="assets/images/location2.png" alt="address" />}
+          icon={<img src="/assets/images/location2.png" alt="address" />}
           placeholder="Ex: 00001"
         />
         <Select
@@ -105,7 +106,7 @@ const FacilityModal = ({ opened, close, title, ...data }) => {
           data={["dfsd", "sdfsf", "dfdsf"]}
           size="lg"
           placeholder="Choose One"
-          icon={<img src="assets/images/map.png" alt="address" />}
+          icon={<img src="/assets/images/map.png" alt="address" />}
         />
       </SimpleGrid>
       <SimpleGrid

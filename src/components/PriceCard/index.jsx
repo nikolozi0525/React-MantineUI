@@ -75,15 +75,15 @@ const PriceCard = (props) => {
         </Text>
         <div className={classes.checkgroup}>
           <Group className={classes.p10}>
-            <img src="assets/images/check.png" alt="" />
+            <img src="/assets/images/check.png" alt="" />
             <Text className={classes.myfont}>{staff} Staff Members</Text>
           </Group>
           <Group className={classes.p10}>
-            <img src="assets/images/check.png" alt="" />
+            <img src="/assets/images/check.png" alt="" />
             <Text className={classes.myfont}>{patient} Patients</Text>
           </Group>
           <Group className={classes.p10}>
-            <img src="assets/images/check.png" alt="" />
+            <img src="/assets/images/check.png" alt="" />
             <Text className={classes.myfont}>{daily} Daily Updates</Text>
           </Group>
         </div>
