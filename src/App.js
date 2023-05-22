@@ -3,16 +3,19 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import BusinessProfile from "./pages/BusinessProfile";
-import Dashboard from "./pages/Dashboard";
-import Facility from "./pages/Facility";
-import FacilityType from "./pages/FacilityType";
+import Dashboard from "./pages/Home/Dashboard";
+import Facility from "./pages/Home/Facility";
+import FacilityType from "./pages/Home/FacilityType";
+import Home from "./pages/Home";
 import LandingPage from "./layouts/landing";
 import Login from "./pages/Login";
-import Patient from "./pages/Patient";
+import NoteType from "./pages/Home/NoteType";
+import Patient from "./pages/Home/Patient";
 import PaymentInfo from "./pages/PaymentInformation";
+import Setting from "./pages/Home/Setting";
 import Signup from "./pages/Signup";
 import SimplePricing from "./pages/SimplePricing";
-import Staff from "./pages/Staff";
+import Staff from "./pages/Home/Staff";
 
 function App() {
   return (
@@ -25,13 +28,19 @@ function App() {
           <Route path="/profile" element={<BusinessProfile />} />
           <Route path="/selectprice" element={<SimplePricing />} />
           <Route path="/payInfo" element={<PaymentInfo />} />
-          <Route path="/facilitytype" element={<FacilityType />} />
-          <Route path="/facility" element={<Facility />}></Route>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/staff" element={<Staff />} />
-          <Route path="/report" element={<Dashboard />} />
-          <Route path="/patient" element={<Patient />} />
-          <Route path="/note" element={<Dashboard />} />
+          <Route path="/home" element={<Home />}>
+            <Route index element={<Dashboard />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="facility" element={<Facility />}></Route>
+            <Route path="facilitytype" element={<FacilityType />} />
+            <Route path="staff" element={<Staff />} />
+            <Route path="report" element={<Dashboard />} />
+            <Route path="patient" element={<Patient />} />
+            <Route path="note" element={<Dashboard />} />
+            <Route path="notetype" element={<NoteType />} />
+          </Route>
+          <Route path="/settings" element={<Setting />} />
+          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
