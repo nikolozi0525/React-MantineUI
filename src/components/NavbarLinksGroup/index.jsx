@@ -47,6 +47,7 @@ export function LinksGroup({ label, initiallyOpened, links, to, imgsrc }) {
         className={({ isActive, isPending }) =>
           isActive ? cx(classes.link, classes.linkActive) : classes.link
         }
+        to={to}
         key={label}
         onClick={(e) => {
           e.preventDefault();
@@ -56,13 +57,13 @@ export function LinksGroup({ label, initiallyOpened, links, to, imgsrc }) {
         // className={classes.control}
       >
         <Group cols={2} spacing={"sm"}>
-          <img src={imgsrc} className={classes.linkIcon} alt="icon" />
+          <img src={imgsrc} className={classes.linkIcon} alt="" />
           <span>{label}</span>
           {hasLinks && (
             <ChevronIcon
               className={classes.chevron}
-              size="2rem"
-              stroke={3}
+              size="1.5rem"
+              stroke={1.5}
               style={{
                 transform: opened
                   ? `rotate(${theme.dir === "rtl" ? 90 : -90}deg)`
