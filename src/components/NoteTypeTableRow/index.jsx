@@ -60,10 +60,10 @@ const NoteTypeTableRow = ({ row }) => {
         title={"Edit Note Type"}
         data={row}
       />
-      <Center className={classes.type} mr={"3%"}>
+      <Center className={classes.type} mr={15}>
         {row.name}
       </Center>
-      <Grid.Col span={10} className={classes.rest}>
+      <Grid.Col span={'auto'} className={classes.rest}>
         <Grid>
           <Grid.Col span={11} className={classes.cell} p={5}>
             <Group>{fields}</Group>
