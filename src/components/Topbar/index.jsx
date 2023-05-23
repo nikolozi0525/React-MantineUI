@@ -10,7 +10,7 @@ const Topbar = (props) => {
   return (
     <Container className={classes.wrapper} fluid p={0}>
       <Text className={classes.myfont}>{title}</Text>
-      <NavLink to={"/settings"}>
+      <NavLink to={"/home/settings"}>
         <ActionIcon
           variant="light"
           color="dark"
