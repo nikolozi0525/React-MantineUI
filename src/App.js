@@ -12,6 +12,7 @@ import Login from "./pages/Login";
 import NoteType from "./pages/Home/NoteType";
 import Patient from "./pages/Home/Patient";
 import PaymentInfo from "./pages/PaymentInformation";
+import Reports from "./pages/Home/Report";
 import Setting from "./pages/Home/Setting";
 import Signup from "./pages/Signup";
 import SimplePricing from "./pages/SimplePricing";
@@ -34,12 +35,12 @@ function App() {
             <Route path="facility" element={<Facility />}></Route>
             <Route path="facilitytype" element={<FacilityType />} />
             <Route path="staff" element={<Staff />} />
-            <Route path="report" element={<Dashboard />} />
+            <Route path="report" element={<Reports />} />
             <Route path="patient" element={<Patient />} />
             <Route path="note" element={<Dashboard />} />
             <Route path="notetype" element={<NoteType />} />
+            <Route path="settings" element={<Setting />} />
           </Route>
-          <Route path="/settings" element={<Setting />} />
           {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         </Routes>
       </BrowserRouter>
