@@ -8,6 +8,7 @@ import Nav from "../../components/Navbar";
 import Note from "./Note";
 import NoteType from "./NoteType";
 import Patient from "./Patient";
+import Reports from "./Report";
 import Setting from "./Setting";
 import Staff from "./Staff";
 import useStyles from "./style";
@@ -24,7 +25,7 @@ const Home = () => {
           <Route path="facility" element={<Facility />}></Route>
           <Route path="staff" element={<Staff />} />
           <Route path="facilitytype" element={<FacilityType />} />
-          <Route path="report" element={<Dashboard />} />
+          <Route path="report" element={<Reports />} />
           <Route path="patient" element={<Patient />} />
           <Route path="note" element={<Note />} />
           <Route path="notetype" element={<NoteType />} />
