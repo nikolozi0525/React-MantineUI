@@ -26,6 +26,7 @@ const useStyles = createStyles((theme) => ({
   },
   mymodal: {
     width: 818,
+    overflow: "visible",
   },
   mwd: {
     width: "100%",
@@ -33,6 +34,7 @@ const useStyles = createStyles((theme) => ({
   myfont: {
     fontFamily: "Inter",
     marginTop: 20,
+    overflow: "visible",
   },
 }));
 const PatientModal = ({ opened, close, title, ...data }) => {
@@ -53,6 +55,7 @@ const PatientModal = ({ opened, close, title, ...data }) => {
       radius={15}
       overlayProps={{ blur: 3 }}
       zIndex={1000}
+      lockScroll={true}
       title={
         <Group>
           <img src="/assets/images/addfac.png" alt="" />
@@ -72,14 +75,14 @@ const PatientModal = ({ opened, close, title, ...data }) => {
         }}
         className={classes.myfont}
         label="Full Name*"
-        size="lg"
+        size="md"
         icon={<img src="/assets/images/home2.png" alt="home" />}
         placeholder="Ex: Valerie Liberty"
       />
       <DateInput
         className={classes.myfont}
         label="Date of birth*"
-        size="lg"
+        size="md"
         icon={<img src="/assets/images/home2.png" alt="home" />}
         placeholder="Ex: 04/02/1993"
       />
@@ -87,7 +90,7 @@ const PatientModal = ({ opened, close, title, ...data }) => {
         <Select
           className={classes.myfont}
           label="Facility Type*"
-          size="lg"
+          size="md"
           data={["dfsd", "sdfsf", "dfdsf"]}
           icon={<img src="/assets/images/building.png" alt="home" />}
           placeholder="Select Facility Type"
@@ -95,7 +98,7 @@ const PatientModal = ({ opened, close, title, ...data }) => {
         <Select
           className={classes.myfont}
           label="Facility Name*"
-          size="lg"
+          size="md"
           data={["dfsd", "sdfsf", "dfdsf"]}
           icon={<img src="/assets/images/building.png" alt="home" />}
           placeholder="Select Facility Name"
@@ -105,7 +108,7 @@ const PatientModal = ({ opened, close, title, ...data }) => {
         <TextInput
           className={classes.myfont}
           label="Guardian Name*"
-          size="lg"
+          size="md"
           icon={<img src="/assets/images/location.png" alt="address" />}
           placeholder="Ex: Wife Newman"
           sx={{ marginTop: 20 }}
@@ -113,7 +116,7 @@ const PatientModal = ({ opened, close, title, ...data }) => {
         <TextInput
           className={classes.myfont}
           label="Guardian Phone*"
-          size="lg"
+          size="md"
           icon={<img src="/assets/images/location.png" alt="address" />}
           sx={{ marginTop: 20 }}
           placeholder="+1-245-786-2436"
