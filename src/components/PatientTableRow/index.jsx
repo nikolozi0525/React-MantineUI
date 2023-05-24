@@ -23,7 +23,6 @@ const useStyles = createStyles((theme) => ({
     width: "100%",
     paddingTop: rem(12),
     paddingBottom: rem(12),
-    // paddingLeft: rem(50),
     fontSize: 16,
     fontFamily: "Inter",
     marginTop: 15,
@@ -47,11 +46,13 @@ const PatientTableRow = ({ row }) => {
         data={row}
       />
       <Text className={classes.cell}>{row.name}</Text>
-      <Text className={classes.cell}>{row.type}</Text>
-      <Text className={classes.cell}>{row.location}</Text>
-      <Text className={classes.cell}>{row.location}</Text>
-      <Text className={classes.cell}>{row.location}</Text>
-      <Text className={classes.cell}>{row.location}</Text>
+      <Text className={classes.cell}>{row.facility_type}</Text>
+      <Text className={classes.cell}>{row.facility_name}</Text>
+      <Text className={classes.cell}>{row.dob}</Text>
+      <Text className={classes.cell}>{row.guardian_name}</Text>
+      <Text sx={{ fontFamily: "Inter", paddingLeft: 20 }}>
+        {row.guardian_phone}
+      </Text>
       <Text sx={{ margin: "auto" }}>
         <Switch
           size="lg"
