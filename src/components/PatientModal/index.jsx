@@ -10,6 +10,7 @@ import {
 } from "@mantine/core";
 
 import { DateInput } from "@mantine/dates";
+import { useState } from "react";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -40,8 +41,33 @@ const useStyles = createStyles((theme) => ({
 const PatientModal = ({ opened, close, title, ...data }) => {
   const { classes } = useStyles();
   const edit = data.data ? true : false;
+  const [name, setName] = useState(edit ? data.data.name : "");
+  const [dob, setDob] = useState(edit ? new Date(data.data.dob) : "");
+  const [facility_type, setFacilityType] = useState(
+    edit ? data.data.facility_type : null
+  );
+  const [facility_name, setFacilityName] = useState(
+    edit ? data.data.facility_name : null
+  );
+  const [guardian_name, setGuardianName] = useState(
+    edit ? data.data.guardian_name : ""
+  );
+  const [guardian_phone, setGuardianPhone] = useState(
+    edit ? data.data.guardian_phone : ""
+  );
+
   const onSave = () => {
-    edit ? console.log(data.data) : console.log("create");
+    const new_patient = {
+      name,
+      dob,
+      facility_type,
+      facility_name,
+      guardian_name,
+      guardian_phone,
+      active: false,
+    };
+    console.log(dob);
+    edit ? console.log(data.data) : console.log(dob);
     close();
   };
 
@@ -78,13 +104,18 @@ const PatientModal = ({ opened, close, title, ...data }) => {
         size="md"
         icon={<img src="/assets/images/home2.png" alt="home" />}
         placeholder="Ex: Valerie Liberty"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
       />
       <DateInput
         className={classes.myfont}
         label="Date of birth*"
+        valueFormat="MM/DD/YYYY"
         size="md"
         icon={<img src="/assets/images/home2.png" alt="home" />}
         placeholder="Ex: 04/02/1993"
+        value={dob}
+        onChange={setDob}
       />
       <SimpleGrid cols={2} className={classes.mwd}>
         <Select
@@ -94,6 +125,8 @@ const PatientModal = ({ opened, close, title, ...data }) => {
           data={["dfsd", "sdfsf", "dfdsf"]}
           icon={<img src="/assets/images/building.png" alt="home" />}
           placeholder="Select Facility Type"
+          value={facility_type}
+          onChange={setFacilityType}
         />
         <Select
           className={classes.myfont}
@@ -102,6 +135,8 @@ const PatientModal = ({ opened, close, title, ...data }) => {
           data={["dfsd", "sdfsf", "dfdsf"]}
           icon={<img src="/assets/images/building.png" alt="home" />}
           placeholder="Select Facility Name"
+          value={facility_name}
+          onChange={setFacilityName}
         />
       </SimpleGrid>
       <SimpleGrid cols={2} className={classes.mwd}>
@@ -112,6 +147,8 @@ const PatientModal = ({ opened, close, title, ...data }) => {
           icon={<img src="/assets/images/location.png" alt="address" />}
           placeholder="Ex: Wife Newman"
           sx={{ marginTop: 20 }}
+          value={guardian_name}
+          onChange={(e) => setGuardianName(e.target.value)}
         />
         <TextInput
           className={classes.myfont}
@@ -120,6 +157,8 @@ const PatientModal = ({ opened, close, title, ...data }) => {
           icon={<img src="/assets/images/location.png" alt="address" />}
           sx={{ marginTop: 20 }}
           placeholder="+1-245-786-2436"
+          value={guardian_phone}
+          onChange={(e) => setGuardianPhone(e.target.value)}
         />
       </SimpleGrid>
 
