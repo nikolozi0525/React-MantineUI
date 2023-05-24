@@ -11,7 +11,7 @@ import {
 } from "@mantine/core";
 
 import AddButton from "../../../components/AddButton";
-import FacilityTypeModal from "../../../components/FacilityTypeModal";
+import FacilityTypeModal from "../../../containers/FacilityTypeModal";
 import FacilityTypeTable from "../../../components/FacilityTypeTable";
 import Nav from "../../../components/Navbar";
 import Topbar from "../../../components/Topbar";

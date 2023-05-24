@@ -10,7 +10,7 @@ import {
 } from "@mantine/core";
 import { IconEdit, IconTrash } from "@tabler/icons-react";
 
-import FacilityModal from "../FacilityModal";
+import FacilityModal from "../../containers/FacilityModal";
 import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
 

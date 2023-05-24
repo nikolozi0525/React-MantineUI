@@ -10,7 +10,7 @@ import {
 } from "@mantine/core";
 import { IconEdit, IconTrash } from "@tabler/icons-react";
 
-import FacilityTypeModal from "../FacilityTypeModal";
+import FacilityTypeModal from "../../containers/FacilityTypeModal";
 import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
 
@@ -46,7 +46,7 @@ const FacilityTableRow = ({ row }) => {
         title={"Facility Type"}
         data={row}
       />
-      <Text className={classes.cell}>{row.name}</Text>
+      <Text className={classes.cell}>{row.type}</Text>
 
       <Text sx={{ marginLeft: "auto", marginRight: 50 }}>
         <Group>

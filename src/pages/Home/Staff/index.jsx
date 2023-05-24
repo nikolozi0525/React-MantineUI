@@ -13,7 +13,7 @@ import {
 import AddButton from "../../../components/AddButton";
 import AlertModal from "../../../components/AlertModal";
 import Nav from "../../../components/Navbar";
-import StaffModal from "../../../components/StaffModal";
+import StaffModal from "../../../containers/StaffModal";
 import StaffTable from "../../../components/StaffTable";
 import Topbar from "../../../components/Topbar";
 import { useDisclosure } from "@mantine/hooks";
