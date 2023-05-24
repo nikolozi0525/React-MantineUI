@@ -9,39 +9,6 @@ import {
 
 import FacilityTableRow from "../FacilityTableRow";
 
-const temp = [
-  {
-    name: "Tuscan",
-    type: "Group-Home",
-    location: "123 Tuscan ave",
-    active: false,
-  },
-  {
-    name: "John's Assisted Living",
-    type: "Group-Home",
-    location: "123 Tuscan ave",
-    active: true,
-  },
-  {
-    name: "Tuscan",
-    type: "Group-Home",
-    location: "123 Tuscan ave",
-    active: false,
-  },
-
-  {
-    name: "Tuscan",
-    type: "Group-Home",
-    location: "123 Tuscan ave",
-    active: true,
-  },
-  {
-    name: "Tuscan",
-    type: "Group-Home",
-    location: "123 Tuscan ave",
-    active: false,
-  },
-];
 const useStyles = createStyles((theme) => ({
   header: {
     color: "white",
@@ -51,7 +18,6 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 500,
     marginBottom: 5,
     backgroundColor: "#232323",
-    // paddingLeft: rem(50),
     paddingTop: rem(15),
     paddingBottom: rem(15),
     borderRadius: 10,
@@ -64,7 +30,7 @@ const useStyles = createStyles((theme) => ({
 
 const FacilityTable = ({ data }) => {
   const { classes } = useStyles();
-  const rows = temp.map((row) => <FacilityTableRow row={row} />);
+  const rows = data.map((row) => <FacilityTableRow row={row} />);
   return (
     <ScrollArea>
       <SimpleGrid cols={5} className={classes.header}>
