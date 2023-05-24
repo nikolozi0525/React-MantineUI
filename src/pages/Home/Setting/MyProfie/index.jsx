@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   Center,
   Container,
@@ -66,93 +67,116 @@ const useStyles = createStyles((theme) => ({
     paddingBottom: 10,
     marginTop: 9,
   },
+  button: { width: 122, fontFamily: "Inter", fontSize: 16, fontWeight: 500 },
 }));
 const MyProfile = () => {
   const { classes } = useStyles();
   return (
-    <Card className={classes.wrapper} p={0}>
-      <Container fluid sx={{ width: "100%" }}>
-        <Grid columns={100}>
-          <Grid.Col span={20} className={classes.box}>
-            <Center>
-              <Image
-                src="/assets/images/avatar.png"
-                alt=""
-                width={111}
-                height={111}
-                onClick={() => alert("hi")}
-                className={classes.btn}
-              />
-              <IconCamera
-                color="white"
-                className={classes.camera}
-                onClick={() => alert("hi")}
-              />
-            </Center>
-            <Box sx={{ marginTop: 15, marginBottom: 47 }}>
-              <Text
-                sx={{ fontFamily: "Inter", fontWeight: 700, fontSize: rem(24) }}
-              >
-                Devon Lane
-              </Text>
-              <Text
-                sx={{
-                  fontFamily: "Inter",
-                  fontWeight: 600,
-                  color: "#979797",
-                  marginTop: 11,
-                }}
-              >
-                Founder & CEO
-              </Text>
-            </Box>
-          </Grid.Col>
-          <Grid.Col span={"auto"} mr={5} mt={30}>
-            <Container fluid sx={{ width: "100%" }}>
-              <SimpleGrid cols={2}>
-                <TextInput
-                  label={"Name*"}
-                  size="md"
-                  icon={
-                    <img
-                      src={"/assets/images/profile.png"}
-                      alt=""
-                      className={classes.inputIcon}
-                    />
-                  }
+    <>
+      <Card className={classes.wrapper} p={0}>
+        <Container fluid sx={{ width: "100%" }}>
+          <Grid columns={100}>
+            <Grid.Col span={20} className={classes.box}>
+              <Center>
+                <Image
+                  src="/assets/images/avatar.png"
+                  alt=""
+                  width={111}
+                  height={111}
+                  onClick={() => alert("hi")}
+                  className={classes.btn}
                 />
-                <TextInput
-                  label={"Email"}
-                  size="md"
-                  icon={
-                    <img
-                      src={"/assets/images/sms.png"}
-                      alt=""
-                      className={classes.inputIcon}
-                    />
-                  }
-                  disabled
+                <IconCamera
+                  color="white"
+                  className={classes.camera}
+                  onClick={() => alert("hi")}
                 />
-                <Box>
-                  <PasswordInput
-                    label={"Password"}
+              </Center>
+              <Box sx={{ marginTop: 15, marginBottom: 47 }}>
+                <Text
+                  sx={{
+                    fontFamily: "Inter",
+                    fontWeight: 700,
+                    fontSize: rem(24),
+                  }}
+                >
+                  Devon Lane
+                </Text>
+                <Text
+                  sx={{
+                    fontFamily: "Inter",
+                    fontWeight: 600,
+                    color: "#979797",
+                    marginTop: 11,
+                  }}
+                >
+                  Founder & CEO
+                </Text>
+              </Box>
+            </Grid.Col>
+            <Grid.Col span={"auto"} mr={5} mt={30}>
+              <Container fluid sx={{ width: "100%" }}>
+                <SimpleGrid cols={2}>
+                  <TextInput
+                    label={"Name*"}
                     size="md"
                     icon={
                       <img
-                        src={"/assets/images/lock.png"}
+                        src={"/assets/images/profile.png"}
                         alt=""
                         className={classes.inputIcon}
                       />
                     }
                   />
-                  <Text className={classes.changepwd}>Change Password</Text>
-                </Box>
-              </SimpleGrid>
-            </Container>
-          </Grid.Col>
-        </Grid>
-      </Container>
-    </Card>
+                  <TextInput
+                    label={"Email"}
+                    size="md"
+                    icon={
+                      <img
+                        src={"/assets/images/sms.png"}
+                        alt=""
+                        className={classes.inputIcon}
+                      />
+                    }
+                    disabled
+                  />
+                  <Box>
+                    <PasswordInput
+                      label={"Password"}
+                      size="md"
+                      icon={
+                        <img
+                          src={"/assets/images/lock.png"}
+                          alt=""
+                          className={classes.inputIcon}
+                        />
+                      }
+                    />
+                    <Text className={classes.changepwd}>Change Password</Text>
+                  </Box>
+                </SimpleGrid>
+              </Container>
+            </Grid.Col>
+          </Grid>
+        </Container>
+      </Card>
+      <SimpleGrid
+        cols={2}
+        sx={{ margin: "auto", marginTop: 25, marginBottom: 10 }}
+      >
+        <Button
+          color="yellow"
+          variant="light"
+          className={classes.button}
+          ml={"auto"}
+        >
+          Cancel
+        </Button>
+        <Button color="yellow" className={classes.button} mr={"auto"}>
+          Save
+        </Button>
+      </SimpleGrid>
+    </>
   );
 };
 
