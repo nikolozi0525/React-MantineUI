@@ -18,23 +18,27 @@ const Dashboard = () => {
           title={"Active Today"}
           desc={"Total Staff"}
           total={"15"}
+          src={"/assets/images/people2.png"}
         />
         <DashCard
           stock={"20"}
           title={"Today Patients"}
           desc={"Today Patients"}
+          src={"/assets/images/patients.png"}
           total={"20"}
         />
         <DashCard
           stock={"06"}
           title={"Medican Records"}
           desc={"Records"}
+          src={"/assets/images/records.png"}
           total={"06"}
         />
         <DashCard
           stock={"03"}
           title={"Active Today"}
           desc={"Incident Reports"}
+          src={"/assets/images/reports.png"}
           total={"04"}
         />
         <UserCard
