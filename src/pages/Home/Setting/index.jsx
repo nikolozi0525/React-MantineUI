@@ -46,7 +46,7 @@ const Setting = () => {
   return (
     <Container fluid className={classes.content} px={40}>
       <Topbar title={"Settings"} />
-      <Tabs className={classes.tabs}>
+      <Tabs className={classes.tabs} defaultValue={"myprofile"}>
         <Tabs.List>
           <Tabs.Tab className={classes.tab} value="myprofile" color="yellow">
             My Profile
