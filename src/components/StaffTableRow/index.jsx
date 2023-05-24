@@ -10,7 +10,7 @@ import {
 } from "@mantine/core";
 import { IconEdit, IconKey, IconTrash } from "@tabler/icons-react";
 
-import StaffModal from "../StaffModal";
+import StaffModal from "../../containers/StaffModal";
 import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
 
@@ -38,12 +38,13 @@ const StaffTableRow = ({ row }) => {
   const { classes } = useStyles();
   const [active, setActive] = useState(row.active);
   const [opened, { open, close }] = useDisclosure(false);
+  const onDelete = () => {};
   return (
     <SimpleGrid cols={6} className={classes.wrapper}>
       <StaffModal
         opened={opened}
         onclose={close}
-        title={"Edit Facility"}
+        title={"Edit Staff"}
         data={row}
       />
       <Text className={classes.cell}>{row.name}</Text>
@@ -69,7 +70,7 @@ const StaffTableRow = ({ row }) => {
           <ActionIcon color="green" variant="light" onClick={open}>
             <IconEdit />
           </ActionIcon>
-          <ActionIcon color="red" variant="light">
+          <ActionIcon color="red" variant="light" onClick={onDelete}>
             <IconTrash />
           </ActionIcon>
         </Group>
