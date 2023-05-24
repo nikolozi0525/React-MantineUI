@@ -11,13 +11,13 @@ import FacilityTypeTableRow from "../FacilityTypeTableRow";
 
 const temp = [
   {
-    name: "Group-Home",
+    type: "Group-Home",
   },
   {
-    name: "Assisted Living",
+    type: "Assisted Living",
   },
   {
-    name: "Hospice Care",
+    type: "Hospice Care",
   },
 ];
 const useStyles = createStyles((theme) => ({
