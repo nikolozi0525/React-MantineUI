@@ -11,7 +11,7 @@ import {
 } from "@mantine/core";
 
 import AddButton from "../../../components/AddButton";
-import FacilityModal from "../../../components/FacilityModal";
+import FacilityModal from "../../../containers/FacilityModal";
 import FacilityTable from "../../../components/FacilityTable";
 import Nav from "../../../components/Navbar";
 import Topbar from "../../../components/Topbar";
@@ -37,23 +37,52 @@ const useStyles = createStyles((theme) => ({
     width: "100%",
   },
 }));
+const temp = [
+  {
+    name: "Tuscan",
+    type: "Group-Home",
+    location: "123 Tuscan ave",
+    active: false,
+  },
+  {
+    name: "John's Assisted Living",
+    type: "Group-Home",
+    location: "123 Tuscan ave",
+    active: true,
+  },
+  {
+    name: "Tuscan",
+    type: "Group-Home",
+    location: "123 Tuscan ave",
+    active: false,
+  },
+
+  {
+    name: "Tuscan",
+    type: "Group-Home",
+    location: "123 Tuscan ave",
+    active: true,
+  },
+  {
+    name: "Tuscan",
+    type: "Group-Home",
+    location: "123 Tuscan ave",
+    active: false,
+  },
+];
 const Facility = (props) => {
   const { classes } = useStyles();
   const [opened, { open, close }] = useDisclosure(false);
+
   return (
-    // <>
-    //   <Container className={classes.wrapper} fluid p={0}>
-    //     <Nav />
     <Container fluid className={classes.content} px={40}>
       <FacilityModal opened={opened} close={close} title={"Add New Facility"} />
       <Topbar title={"Facility Management"} />
       <div className={classes.btn}>
         <AddButton title={"Add New Facility"} onClick={open} />
       </div>
-      <FacilityTable />
+      <FacilityTable data={temp} />
     </Container>
-    //   </Container>
-    // </>
   );
 };
 
