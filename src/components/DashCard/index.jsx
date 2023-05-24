@@ -34,7 +34,7 @@ const DashCard = (props) => {
   const { src, stock, title, desc, total } = props;
   return (
     <Card className={classes.mycard} radius={10} shadow="sm">
-      <img src="/assets/images/people2.png" alt="" />
+      <img src={src} alt="" />
       <Text className={classes.stock}>{stock}</Text>
       <Text className={classes.title} mt={8}>
         {title}
