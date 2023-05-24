@@ -1,20 +1,13 @@
 import {
-  Box,
+  Button,
   Card,
-  Center,
   Container,
-  Grid,
-  Image,
-  PasswordInput,
   Select,
   SimpleGrid,
-  Text,
   TextInput,
   createStyles,
   rem,
 } from "@mantine/core";
-
-import { IconCamera } from "@tabler/icons-react";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -47,11 +40,6 @@ const useStyles = createStyles((theme) => ({
     borderRightColor: "#F2F2F2",
     textAlign: "center",
   },
-  btn: {
-    [`&:hover`]: {
-      cursor: "pointer",
-    },
-  },
   inputIcon: {
     borderRightWidth: 1,
     borderRigthColor: "#CBCBCB",
@@ -68,66 +56,90 @@ const useStyles = createStyles((theme) => ({
     paddingBottom: 10,
     marginTop: 9,
   },
+  btn: {
+    width: 122,
+    fontFamily: "Inter",
+    fontSize: 16,
+    fontWeight: 500,
+  },
 }));
 const BusinessProfile = () => {
   const { classes } = useStyles();
   return (
-    <Card className={classes.wrapper} pb={30}>
-      <Container fluid sx={{ width: "100%" }}>
-        <SimpleGrid cols={3}>
-          <TextInput
-            label={"Company Name*"}
-            size="md"
-            icon={
-              <img
-                src={"/assets/images/profile.png"}
-                alt=""
-                className={classes.inputIcon}
-              />
-            }
-            value={"Ogiso"}
-          />
-          <TextInput
-            label={"Email"}
-            size="md"
-            icon={
-              <img
-                src={"/assets/images/sms.png"}
-                alt=""
-                className={classes.inputIcon}
-              />
-            }
-            value={"ogiso@gmail.com"}
-            disabled
-          />
-          <TextInput
-            label={"Phone number"}
-            size="md"
-            icon={
-              <img
-                src={"/assets/images/sms.png"}
-                alt=""
-                className={classes.inputIcon}
-              />
-            }
-            value={"9876543215"}
-          />
-          <Select
-            label={"Industry"}
-            size="md"
-            icon={
-              <img
-                src={"/assets/images/lock.png"}
-                alt=""
-                className={classes.inputIcon}
-              />
-            }
-            data={["Assisted Living", "asfsdfs", "sfefae"]}
-            value={"Assisted Living"}
-          />
-        </SimpleGrid>
-      </Container>
-    </Card>
+    <>
+      <Card className={classes.wrapper} pb={30}>
+        <Container fluid sx={{ width: "100%" }}>
+          <SimpleGrid cols={3}>
+            <TextInput
+              label={"Company Name*"}
+              size="md"
+              icon={
+                <img
+                  src={"/assets/images/profile.png"}
+                  alt=""
+                  className={classes.inputIcon}
+                />
+              }
+              value={"Ogiso"}
+            />
+            <TextInput
+              label={"Email"}
+              size="md"
+              icon={
+                <img
+                  src={"/assets/images/sms.png"}
+                  alt=""
+                  className={classes.inputIcon}
+                />
+              }
+              value={"ogiso@gmail.com"}
+              disabled
+            />
+            <TextInput
+              label={"Phone number"}
+              size="md"
+              icon={
+                <img
+                  src={"/assets/images/sms.png"}
+                  alt=""
+                  className={classes.inputIcon}
+                />
+              }
+              value={"9876543215"}
+            />
+            <Select
+              label={"Industry"}
+              size="md"
+              icon={
+                <img
+                  src={"/assets/images/lock.png"}
+                  alt=""
+                  className={classes.inputIcon}
+                />
+              }
+              data={["Assisted Living", "asfsdfs", "sfefae"]}
+              value={"Assisted Living"}
+            />
+          </SimpleGrid>
+        </Container>
+      </Card>
+      <SimpleGrid
+        cols={2}
+        sx={{ margin: "auto", marginTop: 25, marginBottom: 10 }}
+      >
+        <Button
+          color="yellow"
+          variant="light"
+          className={classes.btn}
+          ml={"auto"}
+        >
+          Cancel
+        </Button>
+        <Button color="yellow" className={classes.btn} mr={"auto"}>
+          Save
+        </Button>
+      </SimpleGrid>
+    </>
   );
 };
 
