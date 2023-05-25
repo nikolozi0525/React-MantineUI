@@ -13,8 +13,10 @@ import {
   createStyles,
   rem,
 } from "@mantine/core";
+import { Dropzone, MIME_TYPES } from "@mantine/dropzone";
 
 import { IconCamera } from "@tabler/icons-react";
+import { useRef } from "react";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -68,9 +70,13 @@ const useStyles = createStyles((theme) => ({
     marginTop: 9,
   },
   button: { width: 122, fontFamily: "Inter", fontSize: 16, fontWeight: 500 },
+  drop: {
+    display: "none",
+  },
 }));
 const MyProfile = () => {
   const { classes } = useStyles();
+  const openRef = useRef();
   return (
     <>
       <Card className={classes.wrapper} p={0}>
@@ -78,18 +84,23 @@ const MyProfile = () => {
           <Grid columns={100}>
             <Grid.Col span={20} className={classes.box}>
               <Center>
+                <Dropzone
+                  className={classes.drop}
+                  openRef={openRef}
+                  accept={MIME_TYPES.jpeg | MIME_TYPES.png}
+                ></Dropzone>
                 <Image
                   src="/assets/images/avatar.png"
                   alt=""
                   width={111}
                   height={111}
-                  onClick={() => alert("hi")}
+                  onClick={() => openRef.current?.()}
                   className={classes.btn}
                 />
                 <IconCamera
                   color="white"
                   className={classes.camera}
-                  onClick={() => alert("hi")}
+                  onClick={() => openRef.current?.()}
                 />
               </Center>
               <Box sx={{ marginTop: 15, marginBottom: 47 }}>
