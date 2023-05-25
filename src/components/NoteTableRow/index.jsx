@@ -36,7 +36,6 @@ const useStyles = createStyles((theme) => ({
 }));
 const NoteTableRow = ({ row }) => {
   const { classes } = useStyles();
-  const [active, setActive] = useState(row.active);
   const [opened, { open, close }] = useDisclosure(false);
   return (
     <SimpleGrid cols={7} className={classes.wrapper}>
@@ -47,11 +46,11 @@ const NoteTableRow = ({ row }) => {
         data={row}
       />
       <Text className={classes.cell}>{row.name}</Text>
-      <Text className={classes.cell}>{row.type}</Text>
-      <Text className={classes.cell}>{row.location}</Text>
-      <Text className={classes.cell}>{row.location}</Text>
-      <Text className={classes.cell}>{row.location}</Text>
-      <Text className={classes.cell}>{row.location}</Text>
+      <Text className={classes.cell}>{row.note_type}</Text>
+      <Text className={classes.cell}>{row.facility_name}</Text>
+      <Text className={classes.cell}>{row.dob}</Text>
+      <Text className={classes.cell}>{row.staff_name}</Text>
+      <Text className={classes.cell}>{row.description}</Text>
       <Text sx={{ margin: "auto" }}>
         <Group>
           <ActionIcon color="green" variant="light" onClick={open}>
