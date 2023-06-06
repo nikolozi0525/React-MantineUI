@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 
 import {
+  Box,
   Button,
   Card,
   Center,
@@ -12,7 +13,7 @@ import {
 } from "@mantine/core";
 
 const PriceCard = (props) => {
-  const { src, staff, patient, daily, onClick } = props;
+  const { src, staff, patient, daily, onClick, title, ...properties } = props;
   const useStyles = createStyles((theme) => ({
     container: {
       width: "100%",
@@ -57,7 +58,7 @@ const PriceCard = (props) => {
   }));
   const { classes } = useStyles();
   return (
-    <div>
+    <Box {...properties}>
       <Card
         shadow="sm"
         radius={"lg"}
@@ -67,7 +68,7 @@ const PriceCard = (props) => {
       >
         <Group className={classes.type}>
           <img src={src} />
-          <Text className={classes.typedesc}>Trial</Text>
+          <Text className={classes.typedesc}>{title}</Text>
         </Group>
         <Text className={[classes.p10]}>
           <span className={classes.price}>$0.00</span>
@@ -100,7 +101,7 @@ const PriceCard = (props) => {
           </Center>
         </Card.Section>
       </Card>
-    </div>
+    </Box>
   );
 };
 
