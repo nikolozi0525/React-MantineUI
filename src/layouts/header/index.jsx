@@ -11,6 +11,7 @@ import {
 } from "@mantine/core";
 
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = createStyles((theme) => ({
   container: {
@@ -32,6 +33,7 @@ const useStyles = createStyles((theme) => ({
 }));
 const Header = () => {
   const { classes } = useStyles();
+  const navigate = useNavigate();
   return (
     <Box className={classes.container}>
       <Image
@@ -59,7 +61,12 @@ const Header = () => {
           <Center>Support</Center>{" "}
         </Anchor>
       </SimpleGrid>
-      <Button color="yellow" ml={"auto"} className={classes.login}>
+      <Button
+        color="yellow"
+        ml={"auto"}
+        className={classes.login}
+        onClick={() => navigate("/login")}
+      >
         Login
       </Button>
     </Box>
