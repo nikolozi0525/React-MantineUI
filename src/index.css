@@ -17,3 +17,8 @@ code {
     url("../public/assets/fonts/Inter-VariableFont_slnt\,wght.ttf")
       format("truetype");
 }
+@font-face {
+  font-family: "Hind";
+  src: local("Hind"),
+    url("../public/assets/fonts/HindMadurai-Bold.ttf") format("truetype");
+}
