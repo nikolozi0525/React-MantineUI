@@ -53,12 +53,14 @@ const SimplePricing = () => {
             patient={2}
             daily={5}
             src="/assets/images/trial.png"
+            title="Trial"
           />
           <PriceCard
             staff={4}
             patient={5}
             daily={"Unlimited"}
             theme="black"
+            title="Personal"
             src="/assets/images/personal.png"
             onClick={onStart}
           />
@@ -66,6 +68,7 @@ const SimplePricing = () => {
             staff={"Unlimited"}
             patient={"Unlimited"}
             daily={"Unlimited"}
+            title={"Agency"}
             src="/assets/images/agency.png"
             onClick={onStart}
           />
