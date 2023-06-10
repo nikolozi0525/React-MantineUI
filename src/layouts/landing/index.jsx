@@ -84,6 +84,26 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
   },
+  clients: {
+    marginTop: rem(80),
+    marginLeft: rem(220),
+    marginBottom: rem(100),
+  },
+  review: {
+    width: rem(658),
+    fontFamily: "Inter",
+    fontSize: rem(20),
+    color: "#979797",
+    fontWeight: 500,
+    marginLeft: 100,
+    marginTop: 15,
+  },
+  clientName: {
+    color: "white",
+    fontSize: rem(24),
+    fontWeight: 500,
+    fontFamily: "Inter",
+  },
 }));
 
 const logos = [
@@ -252,6 +272,38 @@ const LandingPage = () => {
                 height={32}
               />
             </Group>
+          </Box>
+        </Box>
+        <Box className={classes.container2}>
+          <Box className={classes.clients}>
+            <img src={"/assets/images/clients.png"} alt={"clients"} />
+          </Box>
+          <Box
+            sx={{
+              marginTop: 104,
+              marginLeft: 132,
+            }}
+          >
+            <img src="/assets/images/client_select.png" alt="clientslelect" />
+          </Box>
+          <Box sx={{ marginTop: 126, marginLeft: 79 }}>
+            <img src="/assets/images/startquote.png" alt="" />
+            <Text className={classes.review}>
+              Lorem Ipsum has been the industry's standard dummy text ever since
+              the 1500s, when an undknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not
+              only five centuries, but also the leap into electronic
+              typesetting, remaining essentially unchanged.
+              <Box mt={100}>
+                <Text className={classes.clientName}>Robert Alert______</Text>
+                <Text ff={"Inter"} fw={500} fz={22} color="#979797">
+                  HR Generalist
+                </Text>
+              </Box>
+            </Text>
+            <Box ml={750} mt={-50}>
+              <img src="/assets/images/endquote.png" alt="endquote" />
+            </Box>
           </Box>
         </Box>
       </Box>
