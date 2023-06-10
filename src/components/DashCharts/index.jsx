@@ -130,7 +130,7 @@ const DashCharts = (props) => {
         defaultValue={"Attendance"}
         sx={{ fontFamily: "Inter", fontSize: 20 }}
       >
-        <Tabs.List>
+        <Tabs.List sx={{ width: 200, display: "flex", flexDirection: "row" }}>
           <Tabs.Tab
             value="Attendance"
             sx={{ fontFamily: "Inter", fontSize: 14, fontWeight: 600 }}
