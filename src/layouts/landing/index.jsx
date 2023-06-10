@@ -14,6 +14,7 @@ import {
 } from "@mantine/core";
 
 import { Carousel } from "@mantine/carousel";
+import FeatureCard from "../../components/FeatureCard";
 import Footer from "../footer";
 import Header from "../header";
 import PriceCard from "../../components/PriceCard";
@@ -95,6 +96,32 @@ const logos = [
   { url: "/assets/images/facebook.png" },
   { url: "/assets/images/facebook.png" },
   { url: "/assets/images/facebook.png" },
+];
+const features = [
+  {
+    title: "Generate Report",
+    icon: "/assets/images/feature_report.png",
+    content:
+      "Generate Report typically refers to ther process of                  automatically creating a document or summary based on a set of data or information. This can be done using various software tools that are specially...",
+  },
+  {
+    title: "Add Note",
+    icon: "/assets/images/feature_note.png",
+    content:
+      "Generate Report typically refers to ther process of                  automatically creating a document or summary based on a set of data or information. This can be done using various software tools that are specially...",
+  },
+  {
+    title: "Staff",
+    icon: "/assets/images/feature_staff.png",
+    content:
+      "Generate Report typically refers to ther process of                  automatically creating a document or summary based on a set of data or information. This can be done using various software tools that are specially...",
+  },
+  {
+    title: "Patient",
+    icon: "/assets/images/feature_patient.png",
+    content:
+      "Generate Report typically refers to ther process of                  automatically creating a document or summary based on a set of data or information. This can be done using various software tools that are specially...",
+  },
 ];
 const LandingPage = () => {
   const { classes } = useStyles();
@@ -270,6 +297,18 @@ const LandingPage = () => {
             </Group>
           </Box>
         </Box>
+        <Box>
+          <SimpleGrid cols={4} spacing={20}>
+            {features.map((feature) => {
+              return (
+                <FeatureCard icon={feature.icon} title={feature.title}>
+                  {feature.content}
+                </FeatureCard>
+              );
+            })}
+          </SimpleGrid>
+        </Box>
+        <Box h={100}></Box>
       </Box>
       <Box sx={{ height: 100 }}></Box>
       <Container fluid sx={{ backgroundColor: "#FAFAFA" }}>
